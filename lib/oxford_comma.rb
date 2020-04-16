@@ -1,8 +1,9 @@
 def oxford_comma(array)
-  string = array.join(", ")
-  array = string.split(" ")
-  array.reverse
-  array[0].slice(0,1)
-  array[0].unshift("and ")
-  array.reverse
+  if array.size == 1
+    return array[0]
+  elsif array.size == 2
+    return array.join(" and ")
+  else
+    return array[0..-2].join(', ') + ", and " + array[-1]
+  end
 end
